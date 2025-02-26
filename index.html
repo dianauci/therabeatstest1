@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheraBeats</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll(".first-row, .second-row");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("fade-in");
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1> TheraBeats </h1>
+        <h2> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Suspendisse potenti.</h2>
+        <img src="home.png">
+    </header>
+    <nav class="menu">
+        <a href="home.html">Home</a>
+        <a href="meettheteam.html">Meet the Team</a>
+        <a href="ourhistory.html"> Our History</a>
+    </nav>
+    <div id="about-app">
+        <h3>About Our App</h3>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Suspendisse potenti. Fusce malesuada, nunc at tristique sodales, nulla ligula venenatis justo, nec ultricies libero purus sit amet sapien.</p>
+    </div>
+    <div class="first-row">
+        <div class="image-description">
+            <img src="mock.png" alt="Image 1">
+            <div class="content-text">
+                <p>Description for the first image. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="image-description">
+            <img src="mock.png" alt="Image 2">
+            <div class="content-text">
+                <p>Description for the second image. Fusce malesuada, nunc at tristique sodales.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="second-row">
+        <div class="image-description">
+            <img src="mock.png" alt="Image 3">
+            <div class="content-text">
+                <p>Description for the third image. Nulla ligula venenatis justo, nec ultricies libero.</p>
+            </div>
+        </div>
+        <div class="image-description">
+            <img src="mock.png" alt="Image 4">
+            <div class="content-text">
+                <p>Description for the fourth image. Fusce malesuada, nunc at tristique sodales.</p>
+            </div>
+        </div>
+    </div>
+    <div id="fitness-tracker">
+        <h3>Integrating with a Fitness Tracker</h3>
+        <div class="fitness-tracker-container">
+            <p id="about-fitness-tracker">
+                Our app seamlessly integrates with fitness trackers like the Apple Watch to monitor physiological 
+                stress indicators such as heart rate variability and skin conductance. This allows real-time detection 
+                of stress levels, triggering personalized music therapy interventions to help manage anxiety and enhance well-being.
+            </p>
+            <img src="applewatch.png" alt="Fitness Tracker Integration" class="tracker-img">
+        </div>
+    </div>
+</body>
+</html>
